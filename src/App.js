@@ -10,10 +10,10 @@ function App() {
     data: {
             "key":"rOpgr7s5wA1mQtjGVUsQIRWHY9SDfLcl",
             "chain_id":97,
-            "contract":"<0x...>",
+            "contract":"0x9f48809439876e53a5ca038eedfde9d526daf819",
             "nft_id":1,
-            "nft_data":"<Data>",
-            "to":"<0x...>"
+            "nft_data":"data",
+            "to":"0x909045516Ee992b9A8FF98b2613CE71e2b2B91ad"
           }
   }
 
