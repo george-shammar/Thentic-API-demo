@@ -3,9 +3,48 @@ import injectedModule from '@web3-onboard/injected-wallets';
 import Onboard from '@web3-onboard/core';
 import coinbaseWalletModule from '@web3-onboard/coinbase';
 import walletConnectModule from '@web3-onboard/walletconnect';
-import { ethers } from 'ethers';
 import './App.css';
 const axios = require("axios");
+
+
+
+const injected = injectedModule();
+const rpcApiKey = 'ALCHEMY_KEY'
+// const rpcUrl = `https://eth-mainnet.g.alchemy.com/v2/${rpcApiKey}` || `https://mainnet.infura.io/v3/${rpcApiKey}`
+const rpcUrl = `https://polygon-mumbai.g.alchemy.com/v2/${rpcApiKey}`
+
+// initialize Onboard
+init({
+  wallets: [injected],
+  chains:[
+    {
+      id: '80001',
+      token: 'MATIC',
+      label: 'Polygon mumbai',
+      rpcUrl
+    }
+  ]
+})
+
+const coinbaseWalletSdk = coinbaseWalletModule();
+const walletConnect = walletConnectModule();
+
+const onboard = Onboard({
+  wallets: [
+    injected,
+    coinbaseWalletSdk,
+    walletConnect
+  ],
+  chains:[
+    {
+      id: '80001',
+      token: 'MATIC',
+      label: 'Polygon mumbai',
+      rpcUrl
+    }
+  ]
+})
+
 
 function App() {
 
