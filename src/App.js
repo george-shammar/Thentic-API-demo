@@ -48,6 +48,21 @@ const onboard = Onboard({
 
 function App() {
 
+  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
+
+  // create an ethers provider
+  let ethersProvider;
+
+  if (wallet) {
+    ethersProvider = new ethers.providers.Web3Provider(wallet.provider, 'any')
+  }
+
+  async function connectWallet() {
+    const connectedWallets = await onboard.connectWallet();
+    console.log(connectedWallets);
+  }
+
+
   const mintNFT = {
     method: 'POST',
     url: 'https://thentic.tech/api/nfts/mint',
