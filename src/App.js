@@ -69,7 +69,7 @@ function App() {
     url: 'https://thentic.tech/api/nfts/mint',
     headers: {'Content-Type': 'application/json'},
     data: {
-            "key":"rOpgr7s5wA1mQtjGVUsQIRWHY9SDfLcl",
+            "key":"THENTIC_KEY",
             "chain_id":80001,
             "contract":"0x1c1deb32085a4bd52a4974f841803daaa595deb2",
             "nft_id":1,
