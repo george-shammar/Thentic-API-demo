@@ -70,8 +70,8 @@ function App() {
     headers: {'Content-Type': 'application/json'},
     data: {
             "key":"rOpgr7s5wA1mQtjGVUsQIRWHY9SDfLcl",
-            "chain_id":97,
-            "contract":"0x9f48809439876e53a5ca038eedfde9d526daf819",
+            "chain_id":80001,
+            "contract":"0x1c1deb32085a4bd52a4974f841803daaa595deb2",
             "nft_id":1,
             "nft_data":"data",
             "to":"0x909045516Ee992b9A8FF98b2613CE71e2b2B91ad"
