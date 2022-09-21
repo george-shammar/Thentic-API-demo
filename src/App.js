@@ -1,21 +1,24 @@
-const axios = require("axios");
 import './App.css';
+const axios = require("axios");
 
 function App() {
 
-  const newContract = {
+  const mintNFT = {
     method: 'POST',
-    url: 'https://thentic.tech/api/nfts/contract',
+    url: 'https://thentic.tech/api/nfts/mint',
     headers: {'Content-Type': 'application/json'},
     data: {
-      "key":"rOpgr7s5wA1mQtjGVUsQIRWHY9SDfLcl",
-      "chain_id":97,
-      "name":"Kilimanjaro",
-      "short_name":"KIL"}
+            "key":"rOpgr7s5wA1mQtjGVUsQIRWHY9SDfLcl",
+            "chain_id":97,
+            "contract":"<0x...>",
+            "nft_id":1,
+            "nft_data":"<Data>",
+            "to":"<0x...>"
+          }
   }
 
-  function deploy() {
-    axios.request(newContract).then(function (response) {
+  function mint() {
+    axios.request(mintNFT).then(function (response) {
       console.log(response.data);
     }).catch(function (error) {
       console.error(error);
@@ -26,8 +29,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Thentic API Demo</h1>
-        <button onClick = {() => deploy()}>
-          Deploy Contract
+        <button onClick = {() => mint()}>
+          Mint NFT
         </button>
       </header>
     </div>
