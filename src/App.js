@@ -3,6 +3,7 @@ import injectedModule from '@web3-onboard/injected-wallets';
 import Onboard from '@web3-onboard/core';
 import coinbaseWalletModule from '@web3-onboard/coinbase';
 import walletConnectModule from '@web3-onboard/walletconnect';
+import { ethers } from 'ethers'
 import './App.css';
 const axios = require("axios");
 
@@ -90,6 +91,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+          <button
+                // disabled={connecting} onClick={() => (wallet ? disconnect() : connect())}
+                disabled={connecting} onClick = {() => connectWallet()}
+              >
+                {connecting ? 'connecting' : wallet ? 'disconnect' : 'connect'}
+              </button>
         <h1>Thentic API Demo</h1>
         <button onClick = {() => mint()}>
           Mint NFT
