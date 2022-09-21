@@ -1,3 +1,9 @@
+import { init, useConnectWallet } from '@web3-onboard/react';
+import injectedModule from '@web3-onboard/injected-wallets';
+import Onboard from '@web3-onboard/core';
+import coinbaseWalletModule from '@web3-onboard/coinbase';
+import walletConnectModule from '@web3-onboard/walletconnect';
+import { ethers } from 'ethers';
 import './App.css';
 const axios = require("axios");
 
@@ -23,6 +29,8 @@ function App() {
     }).catch(function (error) {
       console.error(error);
     });
+
+    console.log("minted");
   }
 
   return (
