@@ -95,7 +95,7 @@ function App() {
                 // disabled={connecting} onClick={() => (wallet ? disconnect() : connect())}
                 disabled={connecting} onClick = {() => connectWallet()}
               >
-                {connecting ? 'connecting' : wallet ? 'disconnect' : 'connect'}
+                {connecting ? 'connecting' : wallet ? 'disconnect' : 'Connect wallet'}
               </button>
         <h1>Thentic API Demo</h1>
         <button onClick = {() => mint()}>
