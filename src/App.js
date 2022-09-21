@@ -3,8 +3,14 @@ import './App.css';
 
 function App() {
 
+  
+
   function deploy() {
-    
+    axios.request(newContract).then(function (response) {
+      console.log(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
   }
 
   return (
