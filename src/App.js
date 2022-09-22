@@ -23,7 +23,8 @@ function App() {
               "contract":"0x19d9f60e4cf3256a056b6f818425ce1bacd62f3d",
               "nft_id":3,
               "nft_data":"data",
-              "to":"0x909045516Ee992b9A8FF98b2613CE71e2b2B91ad"
+              // "to":"0x909045516Ee992b9A8FF98b2613CE71e2b2B91ad"
+              "to": address
             }
     }
 
@@ -45,6 +46,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Thentic API Demo</h1>
+        <input type="text" placeholder="Ethereum Address" required></input>
         <button onClick = {() => mint()}>
           Get Started
         </button>
