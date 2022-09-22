@@ -6,6 +6,7 @@ const axios = require("axios");
 function App() {
   const [status, setStatus] = useState("");
   const [link, setLink] = useState("");
+  const [formInput, updateFormInput] = useState({address:""});
 
   const mintNFT = {
     method: 'POST',
