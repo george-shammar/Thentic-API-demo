@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './App.css';
 const axios = require("axios");
 
@@ -24,6 +24,7 @@ function App() {
     axios.request(mintNFT).then(function (response) {
       console.log(response.data.transaction_url);
       const url = response.data.transaction_url
+      setStatus("minting NFT through thentic...")
     }).catch(function (error) {
       console.error(error);
     });
@@ -38,7 +39,9 @@ function App() {
         <button onClick = {() => mint()}>
           Mint NFT
         </button>
+        <div>status</div>
       </header>
+      
     </div>
   );
 }
