@@ -46,7 +46,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Thentic API Demo</h1>
-        <input type="text" placeholder="Ethereum Address" required></input>
+
+        <input 
+          type="text" 
+          placeholder="Ethereum Address" 
+          required
+          onChange={e => updateFormInput({...formInput, address: e.target.value})}
+          >
+
+          </input>
+        
         <button onClick = {() => mint()}>
           Get Started
         </button>
