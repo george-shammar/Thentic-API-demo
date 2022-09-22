@@ -19,7 +19,7 @@ function App() {
               "key":"rOpgr7s5wA1mQtjGVUsQIRWHY9SDfLcl",
               "chain_id":97,
               "contract":"0x19d9f60e4cf3256a056b6f818425ce1bacd62f3d",
-              "nft_id": 11,
+              "nft_id": 12,
               "nft_data":"data", 
               "to": address
             }
