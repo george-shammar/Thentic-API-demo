@@ -21,17 +21,19 @@ function App() {
   }
 
   function mint() {
-    setStatus("minting NFT through thentic...")
+    setStatus("Getting started...")
     axios.request(mintNFT).then(function (response) {
       console.log(response.data.transaction_url);
       const url = response.data.transaction_url
-     
+     setStatus()
     }).catch(function (error) {
       console.error(error);
     });
 
     console.log("minted");
   }
+
+  const confirmedStatus =  "Getting started...";
 
   return (
     <div className="App">
