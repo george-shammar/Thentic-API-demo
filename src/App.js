@@ -8,21 +8,25 @@ function App() {
   const [link, setLink] = useState("");
   const [formInput, updateFormInput] = useState({address:""});
 
-  const mintNFT = {
-    method: 'POST',
-    url: 'https://thentic.tech/api/nfts/mint',
-    headers: {'Content-Type': 'application/json'},
-    data: {
-            "key":"rOpgr7s5wA1mQtjGVUsQIRWHY9SDfLcl",
-            "chain_id":97,
-            "contract":"0x19d9f60e4cf3256a056b6f818425ce1bacd62f3d",
-            "nft_id":3,
-            "nft_data":"data",
-            "to":"0x909045516Ee992b9A8FF98b2613CE71e2b2B91ad"
-          }
-  }
+  
 
   function mint() {
+    const {address} = formInput;
+
+    const mintNFT = {
+      method: 'POST',
+      url: 'https://thentic.tech/api/nfts/mint',
+      headers: {'Content-Type': 'application/json'},
+      data: {
+              "key":"rOpgr7s5wA1mQtjGVUsQIRWHY9SDfLcl",
+              "chain_id":97,
+              "contract":"0x19d9f60e4cf3256a056b6f818425ce1bacd62f3d",
+              "nft_id":3,
+              "nft_data":"data",
+              "to":"0x909045516Ee992b9A8FF98b2613CE71e2b2B91ad"
+            }
+    }
+
     axios.request(mintNFT).then(function (response) {
       console.log(response.data.transaction_url);
       const url = response.data.transaction_url
